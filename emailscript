@@ -1,0 +1,21 @@
+function sendReport() {
+  const ss = SpreadsheetApp.getActive();
+  const sh = ss.getSheetByName('Dashboard'); // change Dashboard to the name of your sheet
+  const data = sh.getRange('B29:I35').getValues();
+  var message='Hi Team, \n \nPlease find the report of XYZ for today below \n\nNo of XYZ Assigned :'+sh.getRange('E36').getValue() +'\nNo of XYZ Completed :'+sh.getRange('H36').getValue() +'\n\n\n';
+// change getRange to match whatever your cell is here
+  var subject ='Daily XYZ Report';
+  
+  data.forEach(r=>{
+     let value = r[7];  
+     
+         let name = r[0];
+         message = message + name +" : "+ value*100 +"%";
+         message = message + "\n";
+         
+         
+     
+  });
+  message=message+'\nRegards,\nShiny'
+MailApp.sendEmail('shiny.dhar@gmail.com', subject, message); // add more email ids with commas
+}
