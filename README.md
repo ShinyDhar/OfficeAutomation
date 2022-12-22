@@ -1,6 +1,6 @@
 # The repository of Appscript Projects to AUTOMATE your boring tasks
 
-## Project 1 - Filename : sendReport()
+## Project 1 - **Filename : emailScript**
 ### Automating Sending Reports everyday after building dashboard
 _Problem Statement :_ Send a reminder with a report to the whole team at time T AM every day with Project Status
 
